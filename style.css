@@ -1,0 +1,708 @@
+/* Global Styles */
+body { 
+font-family: 'Nunito Sans', sans-serif; 
+      margin: 0; 
+      padding: 0;
+      background-color: #faf5e4; /* Second Color */ 
+} 
+
+/* Navigation Bar */ 
+nav { 
+display: flex; 
+justify-content: space-between; align-items: center; 
+padding: 15px 50px; /* Added padding to space out the navbar */ position: absolute; 
+width: 100%; 
+top: 0; 
+left: 0; 
+background: transparent; 
+z-index: 10; 
+} 
+/* Hide Menu Button on Large Screens */ 
+.menu-toggle { 
+display: none; 
+font-size: 1.8rem; 
+background: none; 
+border: none; 
+color: #004445; 
+cursor: pointer; 
+} 
+/* Responsive Navigation */ 
+@media (max-width: 768px) { 
+.menu-toggle { 
+display: block; /* Show menu button */ 
+} 
+.nav-links { 
+display: none; 
+flex-direction: column; 
+background: #004445; 
+position: absolute; 
+top: 60px; 
+left: 0; 
+width: 100%; 
+padding: 10px 0; 
+text-align: center; 
+} 
+.nav-links.active { 
+display: flex; 
+} 
+.nav-links li { 
+padding: 10px 0; 
+} 
+.nav-links li a { 
+color: white; 
+font-size: 1.2rem; 
+} 
+}
+/* Logo Styling */ 
+.logo { 
+font-size: 1.8rem; 
+font-weight: bold; 
+color: #004445; 
+display: flex; 
+align-items: center; 
+} 
+.logo span { 
+font-size: 2.5rem; /* Made 'M' bigger */ 
+font-weight: bold; 
+color: #f8b400; /* First Color */ margin-right: 5px; 
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Stylish effect */ 
+} 
+/* Navbar Links */ 
+nav ul { 
+display: flex; 
+list-style: none; 
+} 
+nav ul li { 
+margin-left: 20px; 
+} 
+nav ul li a { 
+color: #004445; /* Fourth Color */ text-decoration: none; 
+font-weight: 600; 
+transition: 0.3s ease-in-out; 
+} 
+nav ul li a:hover { 
+color: #f8b400; 
+} 
+/* Hero Section */ 
+.hero { 
+display: flex; 
+align-items: center; 
+justify-content: center; 
+width: 100%; 
+height: 110vh; 
+position: relative; 
+overflow: hidden; 
+padding-top: 80px; /* Added space to push down content from nav */ 
+} 
+.hero-content { 
+display: flex; 
+width: 100%; 
+height: 100%; 
+} 
+/* Left Section */ 
+.hero-left { 
+flex: 1; 
+background-color: #faf5e4; /* Second Color */ 
+padding: 40px; /* Reduced padding */ 
+display: flex; 
+flex-direction: column; 
+justify-content: center; 
+align-items: flex-start; 
+position: relative; 
+z-index: 2; 
+} 
+.hero-left h1{ 
+color: #004445; /* Fourth Color */ font-size: 2.8rem; 
+margin-top: 0; 
+margin-bottom: 0px; 
+} 
+.hero-left h3{ 
+color: #004445; /* Fourth Color */ 
+} 
+.hero-left p { 
+color: #004445; 
+font-size: 1.2rem; 
+} 
+/* Social Icons */ 
+.social-icons { 
+display: flex; 
+gap: 15px; 
+margin-top: 15px; 
+} 
+.social-icons a:hover { 
+background-color: #f8b400; 
+color: #004445; 
+} 
+.social-icons a { 
+text-decoration: none; /* Removes underline */ 
+color: #004445; /* Fourth Color */ display: inline-flex; /* Ensures proper alignment */ 
+align-items: center; 
+justify-content: center; 
+border: 2px solid #004445; 
+border-radius: 50%; 
+width: 40px; 
+height: 40px; 
+font-size: 1.5rem; 
+transition: 0.3s; 
+} 
+.social-icons a i { 
+display: block; /* Ensures icons take up the whole space */ 
+line-height: 1; /* Removes any extra spacing */ 
+} 
+/* Hire Me Button */ 
+.hire-btn { 
+background-color: #f8b400; /* First Color */ 
+color: #004445; 
+padding: 10px 25px; 
+font-size: 1rem; 
+font-weight: bold; 
+border-radius: 10px; 
+border: 2px solid transparent; cursor: pointer; 
+transition: 0.3s ease-in-out; margin-top: 20px; 
+} 
+.hire-btn:hover { 
+background-color: transparent; color: #f8b400; 
+border: 2px solid #f8b400; 
+} 
+/* Right Section - Diagonal Layout */ 
+.hero-right { 
+flex: 1; 
+background-color: #f8b400; /* First Color */ 
+clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%); 
+display: flex; 
+align-items: center; 
+justify-content: center; 
+} 
+.hero-right img { 
+width: 55%; 
+border-radius: 10px; 
+} 
+/* Responsive Navigation */ 
+@media (max-width: 992px) { 
+nav ul { 
+display: none; 
+flex-direction: column; 
+position: absolute; 
+top: 70px; 
+right: 0; 
+background: #faf5e4; 
+width: 100%; 
+text-align: center; 
+padding: 10px 0; 
+} 
+nav ul.active { 
+display: flex; 
+} 
+nav ul li { 
+margin: 10px 0; 
+} 
+.menu-toggle { 
+display: block; 
+font-size: 2rem; 
+cursor: pointer; 
+color: #004445; 
+} 
+} 
+@media (max-width: 768px) { 
+.hero-content { 
+flex-direction: column; 
+text-align: center; 
+} 
+.hero-left, .hero-right { 
+flex: none; 
+width: 100%; 
+padding: 20px; 
+} 
+.hero-right { 
+clip-path: none; 
+display: flex; 
+justify-content: center; 
+} 
+.hero-right img { 
+width: 80%; 
+} 
+}
+
+/* About Section */
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 10%;
+    background-color: #004445; /* Third Color */
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    gap: 50px;
+}
+
+/* About Image */
+.about-image-container {
+    flex: 1;
+    max-width: 400px;
+    height: auto;
+    border: 10px solid #f8b400; /* First Color */
+    border-radius: 10px;
+    overflow: hidden; /* Prevents image from spilling out */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures the image fills the box properly */
+}
+
+/* About Text */
+.about-text {
+    flex: 1;
+    color: #faf5e4; /* Second Color */
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    color: #faf5e4;
+    margin-bottom: 15px;
+}
+
+.about-text span {
+    color: #f8b400; /* First Color */
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Read More Button */
+.read-more {
+    background-color: #f8b400; /* First Color */
+    color: #004445; /* Fourth Color */
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.read-more:hover {
+    background-color: transparent;
+    color: #f8b400;
+    border: 2px solid #f8b400;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image-container {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-image-container {
+        max-width: 200px; /* Reduce size on small screens */
+    }
+}
+
+
+/* Services Section */
+.services {
+    width: 100%;
+    background-color: #faf5e4; /* Second Color */
+    text-align: center;
+    padding: 80px 0;
+}
+
+/* Section Title */
+.services h2 {
+    font-size: 2.5rem;
+    color: #004445; /* Fourth Color */
+    margin-bottom: 40px;
+}
+
+.services h2 span {
+    color: #f8b400; /* First Color */
+}
+
+/* Services Grid - 3 Side by Side */
+.services-grid {
+    display: flex; /* Using flexbox for better control */
+    justify-content: space-between; /* Even spacing */
+    gap: 30px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Service Card Styling */
+.service-card {
+    flex: 1; /* Ensures equal width */
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
+    text-align: center;
+}
+
+/* Hover Effect - Adds Border */
+.service-card:hover {
+    border: 3px solid #f8b400; /* First Color */
+    border-radius: 15px;
+}
+
+/* Service Icon */
+.service-icon {
+    font-size: 3rem;
+    color: #f8b400; /* First Color */
+    margin-bottom: 15px;
+}
+
+/* Service Title */
+.service-card h3 {
+    font-size: 1.5rem;
+    color: #004445; /* Fourth Color */
+    margin-bottom: 10px;
+}
+
+/* Service Description */
+.service-card p {
+    font-size: 1rem;
+    color: #004445; /* Fourth Color */
+    margin-bottom: 15px;
+}
+
+/* Read More Button */
+.read-more {
+    background-color: #f8b400; /* First Color */
+    color: #004445; /* Fourth Color */
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+/* Button Hover Effect */
+.read-more:hover {
+    background-color: transparent;
+    color: #f8b400;
+    border: 2px solid #f8b400;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .services-grid {
+        flex-wrap: wrap; /* Allows stacking */
+        justify-content: center;
+    }
+
+    .service-card {
+        width: 45%; /* Two per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 100%; /* One per row on mobile */
+    }
+}
+/* Responsive Services Section */
+@media (max-width: 992px) {
+    .services-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .service-card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 100%;
+    }
+}
+
+/* Portfolio Section */
+.portfolio {
+    width: 100%;
+    background-color: #004445; /* Fourth Color */
+    text-align: center;
+    padding: 80px 0;
+}
+
+/* Section Title */
+.portfolio h2 {
+    font-size: 2.5rem;
+    color: #faf5e4; /* Second Color */
+    margin-bottom: 40px;
+}
+
+.portfolio h2 span {
+    color: #f8b400; /* First Color */
+}
+
+/* Portfolio Grid Layout */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
+    gap: 30px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Portfolio Item */
+.portfolio-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Portfolio Images */
+.portfolio-item img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect: Reduce Image Opacity */
+.portfolio-item:hover img {
+    opacity: 0.7;
+}
+
+/* Gradient Overlay */
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(248, 180, 0, 1), rgba(248, 180, 0, 0.6), rgba(248, 180, 0, 0.3), transparent);
+    color: #004445; /* Fourth Color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Show Overlay on Hover */
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+/* Portfolio Overlay Title */
+.portfolio-overlay h3 {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #004445; /* Fourth Color */
+}
+
+/* Portfolio Overlay Description */
+.portfolio-overlay p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    max-width: 90%;
+    margin: 0 auto 15px;
+}
+
+/* Portfolio Overlay Link Icon */
+.portfolio-overlay a {
+    font-size: 1.8rem;
+    color: #004445; /* Fourth Color */
+    background: #faf5e4; /* Second Color */
+    padding: 12px;
+    border-radius: 50%;
+    transition: background 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.portfolio-overlay a:hover {
+    background: #2c786c; /* Third Color */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 column per row */
+    }
+}
+
+
+/* Contact Section */
+.contact {
+    background-color: #FAF5E4; /* Second Color */
+    padding: 80px 0;
+    text-align: center;
+}
+
+/* Contact Title */
+.contact h2 {
+    font-size: 2.5rem;
+    color: #004445; /* Fourth Color */
+    margin-bottom: 40px;
+}
+
+.contact h2 span {
+    color: #F8B400; /* First Color */
+}
+
+/* Contact Form */
+form {
+    max-width: 700px;
+    margin: 0 auto;
+    background:  #004445; /* Last Color */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Form Group - Two Inputs Per Row */
+.form-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group input,
+textarea {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* Text Area */
+textarea {
+    width: 100%;
+    height: 120px;
+    resize: none;
+    margin-bottom: 15px;
+}
+
+/* Send Message Button */
+.btn {
+    background: #F8B400; /* First Color */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e09e00; /* Darker Shade of First Color */
+}
+
+/* Responsive Contact Form */
+@media (max-width: 768px) {
+    .form-group {
+        flex-direction: column;
+    }
+
+    .form-group input {
+        width: 100%;
+    }
+}
+
+
+/* Footer */
+footer {
+    background-color: #004445; /* Last Color */
+    padding: 40px 0;
+    text-align: center;
+}
+
+/* Back to Top Section */
+.back-to-top {
+    color: #F8B400; /* First Color */
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.back-to-top i {
+    font-size: 20px; /* Icon Size */
+    margin-bottom: 5px;
+}
+
+/* Social Icons */
+.social-icons2 {
+    margin-bottom: 15px;
+}
+
+.social-icons2 a {
+    color: #FAF5E4; /* Second Color */
+    font-size: 20px;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.social-icons2 a:hover {
+    color: #F8B400; /* First Color on hover */
+}
+
+/* Copyright Text */
+.copyright {
+    color: #FAF5E4; /* Second Color */
+    font-size: 14px;
+    margin-top: 10px;
+}
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        text-align: center;
+    }
+
+    .social-icons2 {
+        justify-content: center;
+    }
+}
